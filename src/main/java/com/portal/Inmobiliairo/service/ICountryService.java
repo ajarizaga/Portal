@@ -5,12 +5,22 @@
 package com.portal.Inmobiliairo.service;
 
 import com.portal.Inmobiliairo.dto.CountryDTO;
+import java.util.List;
 
 /**
  *
  * @author Gamer
  */
-public interface ICountryService {
+public interface ICountryService 
+{
     public CountryDTO createCountry(CountryDTO countryDTO);
+    
+    public List<CountryDTO> getAllCountries();
+    
+    public CountryDTO getCountryById(Long id);
+    
+    public CountryDTO updateCountry(CountryDTO countryDTO, Long id);
+    
+    public void deleteCountry(Long id);
     
 }
