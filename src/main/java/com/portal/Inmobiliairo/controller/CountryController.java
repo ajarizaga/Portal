@@ -5,7 +5,9 @@
 package com.portal.Inmobiliairo.controller;
 
 import com.portal.Inmobiliairo.dto.CountryDTO;
+import com.portal.Inmobiliairo.dto.CountryResponse;
 import com.portal.Inmobiliairo.service.ICountryService;
+import com.portal.Inmobiliairo.utilities.AppConstants;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -37,9 +40,13 @@ public class CountryController {
     }
     
     @GetMapping
-    private List<CountryDTO> listCountries()
+    private CountryResponse listCountries(
+            @RequestParam(value = "pageNumber", defaultValue = AppConstants.PAGE_NUMBER_DEFAULT, required = false) int pageNumber,
+            @RequestParam(value = "pageZise", defaultValue = AppConstants.PAGE_SIZE_DEFAULT, required = false) int pageZise,
+            @RequestParam(value = "sortBy", defaultValue = AppConstants.ORDER_BY_DEFAULT, required = false) String orderBy,
+            @RequestParam(value = "sortDirection", defaultValue = AppConstants.ORDERE_BY_DIRECTION_DEFAULT, required = false) String sortDirection)
     {
-        return countryService.getAllCountries();
+        return countryService.getAllCountries(pageNumber, pageZise, orderBy, sortDirection);
     }
     
     @GetMapping("/{id}")

@@ -5,12 +5,17 @@
 package com.portal.Inmobiliairo.service;
 
 import com.portal.Inmobiliairo.dto.CountryDTO;
+import com.portal.Inmobiliairo.dto.CountryResponse;
 import com.portal.Inmobiliairo.exceptions.ResourceNotFoundException;
 import com.portal.Inmobiliairo.model.Country;
 import com.portal.Inmobiliairo.repository.ICountryRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 /**
@@ -36,10 +41,34 @@ public class CountryServiceImpl implements ICountryService{
     }
 
     @Override
-    public List<CountryDTO> getAllCountries() {
+    public CountryResponse getAllCountries(int pageNumber, int pageZise, String orderBy, String sortDirection) 
+    {
+        Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name())?Sort.by(orderBy).ascending():Sort.by(orderBy).descending();
+        Pageable pageable = PageRequest.of(pageNumber, pageZise, sort);
+        Page<Country> countries = iCountryRepository.findAll(pageable);
+        
+        List<Country> countriesList = countries.getContent();
+        
+        List<CountryDTO> content = countriesList.stream().map(country -> mapDTO(country)).collect(Collectors.toList());
+        
+        CountryResponse countryResponse = new CountryResponse();
+        countryResponse.setContent(content);
+        countryResponse.setPageNumber(countries.getNumber());
+        countryResponse.setPageSize(countries.getSize());
+        countryResponse.setItems(countries.getTotalElements());
+        countryResponse.setPages(countries.getTotalPages());
+        countryResponse.setLast(countries.isLast());
+        
+        return countryResponse;
+    }
+    
+    @Override
+    public List<CountryDTO> getAll() 
+    {
         List<Country> countries = iCountryRepository.findAll();
         return countries.stream().map(country -> mapDTO(country)).collect(Collectors.toList());
     }
+    
     
     //convierte entidad a DTO
     private CountryDTO mapDTO(Country country)
@@ -87,6 +116,8 @@ public class CountryServiceImpl implements ICountryService{
         Country country = iCountryRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("pais", "id", id));
         iCountryRepository.delete(country);
     }
+
+    
 
    
 }

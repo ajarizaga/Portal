@@ -5,6 +5,7 @@
 package com.portal.Inmobiliairo.service;
 
 import com.portal.Inmobiliairo.dto.CountryDTO;
+import com.portal.Inmobiliairo.dto.CountryResponse;
 import java.util.List;
 
 /**
@@ -15,7 +16,9 @@ public interface ICountryService
 {
     public CountryDTO createCountry(CountryDTO countryDTO);
     
-    public List<CountryDTO> getAllCountries();
+    public CountryResponse getAllCountries(int pageNumber, int pageZise, String orderBy, String sortDirection);
+    
+    public List<CountryDTO>getAll();
     
     public CountryDTO getCountryById(Long id);
     
