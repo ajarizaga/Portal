@@ -6,6 +6,8 @@ package com.portal.Inmobiliario.model.dto.Country;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -15,9 +17,10 @@ import lombok.Getter;
  */
 @Getter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class CreateCountryRequest 
 {
-    
     @NotNull(message = "El campo no puede estar vacio")
     @NotEmpty(message = "El campo no puede estar vacio")
     private String country;

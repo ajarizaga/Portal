@@ -6,6 +6,8 @@ package com.portal.Inmobiliario.model.dto.Province;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -15,6 +17,8 @@ import lombok.Getter;
  */
 @Getter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class CreateProvinceRequest 
 {
     @NotEmpty(message = "El campo no puede estar vacio")

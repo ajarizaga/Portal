@@ -53,6 +53,8 @@ public class ProvinceController
     @PostMapping
     public ResponseEntity<ProvinceResponse> save(@Valid @RequestBody CreateProvinceRequest request)
     {
+        //agregar el pais a la provincia traytendo el id del request
+        
         ProvinceResponse response = provinceService.save(request);
         return ResponseEntity.created(URI.create("/api/provinces/" + response.getId())).body(response);
         

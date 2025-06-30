@@ -30,17 +30,17 @@ public class CountryServiceImplement implements ICountryService
     public CountryResponse findById(Long id) 
     {
         return countryRepository.findById(id)
-                .map(countryMapper::toCountryResponse)
-                .orElseThrow(CountryNotFoundException::new);
+            .map(countryMapper::toCountryResponse)
+            .orElseThrow(CountryNotFoundException::new);
     }
 
     @Override
     public List<CountryResponse> findAll() 
     {
         return countryRepository.findAll()
-                .stream()
-                .map(countryMapper::toCountryResponse)
-                .collect(Collectors.toList());
+            .stream()
+            .map(countryMapper::toCountryResponse)
+            .collect(Collectors.toList());
     }
 
     @Override
@@ -52,8 +52,8 @@ public class CountryServiceImplement implements ICountryService
             country.setCountry(request.getCountry());
             Country savedCountry = countryRepository.save(country);
             return countryRepository.findById(savedCountry.getId())
-                    .map(countryMapper::toCountryResponse)
-                    .orElseThrow(CountryNotFoundException::new);
+                .map(countryMapper::toCountryResponse)
+                .orElseThrow(CountryNotFoundException::new);
         }
         catch(Exception e)
         {
@@ -65,12 +65,12 @@ public class CountryServiceImplement implements ICountryService
     public CountryResponse update(Long id, CreateCountryRequest request) 
     {
         return countryRepository.findById(id)
-                .map(country ->{
-                    country.setCountry(request.getCountry());
-                    return countryRepository.save(country);
-                })
-                .map(countryMapper::toCountryResponse)
-                .orElseThrow(CountryNotFoundException::new);
+            .map(country ->{
+                country.setCountry(request.getCountry());
+                return countryRepository.save(country);
+            })
+            .map(countryMapper::toCountryResponse)
+            .orElseThrow(CountryNotFoundException::new);
     }
     
     @Override

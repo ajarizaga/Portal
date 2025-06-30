@@ -65,6 +65,7 @@ public class ProvinceServiceImplement implements IProvinceService
                 .map(country ->{
                         Province province = new Province();
                         province.setProvince(request.getProvince());
+                        province.setCountry(country);
                         return provinceRepository.save(province);
                 })
                 .map(provinceMapper::toProvinceResponse)
@@ -79,6 +80,7 @@ public class ProvinceServiceImplement implements IProvinceService
                     .findById(request.getIdCountry())
                     .map(country -> {
                         province.setProvince(request.getProvince());
+                        province.setCountry(country);
                         return provinceRepository.save(province);
                     })
                     .orElseThrow(CountryNotFoundException::new))
