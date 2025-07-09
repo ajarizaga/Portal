@@ -34,58 +34,58 @@ public class ProvinceServiceImplement implements IProvinceService
     public ProvinceResponse findById(Long id) 
     {
         return provinceRepository.findById(id)
-                .map(provinceMapper::toProvinceResponse)
-                .orElseThrow(ProvinceNotFoundException::new);
+            .map(provinceMapper::toProvinceResponse)
+            .orElseThrow(ProvinceNotFoundException::new);
     }
 
     @Override
     public List<ProvinceResponse> findAll() 
     {
         return provinceRepository.findAll()
-                .stream()
-                .map(provinceMapper::toProvinceResponse)
-                .collect(Collectors.toList());
+            .stream()
+            .map(provinceMapper::toProvinceResponse)
+            .collect(Collectors.toList());
     }
 
     @Override
     public List<ProvinceResponse> findAllByCountryId(Long countryId) 
     {
         return (List<ProvinceResponse>) countryRepository.findById(countryId)
-                .map(country -> provinceRepository.findAllByCountry(country))
-                .map(province ->province.stream()
-                    .map(provinceMapper::toProvinceResponse)
-                    .collect(Collectors.toList()))
-                .orElseThrow(CountryNotFoundException::new);
+            .map(country -> provinceRepository.findAllByCountry(country))
+            .map(province ->province.stream()
+                .map(provinceMapper::toProvinceResponse)
+                .collect(Collectors.toList()))
+            .orElseThrow(CountryNotFoundException::new);
     }
     
     @Override
     public ProvinceResponse save(CreateProvinceRequest request) 
     {    
         return countryRepository.findById(request.getIdCountry())
-                .map(country ->{
-                        Province province = new Province();
-                        province.setProvince(request.getProvince());
-                        province.setCountry(country);
-                        return provinceRepository.save(province);
-                })
-                .map(provinceMapper::toProvinceResponse)
-                .orElseThrow(CountryNotFoundException::new);
+            .map(country ->{
+                Province province = new Province();
+                province.setProvince(request.getProvince());
+                province.setCountry(country);
+                return provinceRepository.save(province);
+            })
+            .map(provinceMapper::toProvinceResponse)
+            .orElseThrow(CountryNotFoundException::new);
     }
 
     @Override
     public ProvinceResponse update(Long id, CreateProvinceRequest request) 
     {
         return provinceRepository.findById(id)
-                .map(province -> countryRepository
-                    .findById(request.getIdCountry())
-                    .map(country -> {
-                        province.setProvince(request.getProvince());
-                        province.setCountry(country);
-                        return provinceRepository.save(province);
-                    })
-                    .orElseThrow(CountryNotFoundException::new))
-                .map(provinceMapper::toProvinceResponse)
-                .orElseThrow(ProvinceNotFoundException::new);
+            .map(province -> countryRepository
+                .findById(request.getIdCountry())
+                .map(country -> {
+                    province.setProvince(request.getProvince());
+                    province.setCountry(country);
+                    return provinceRepository.save(province);
+                })
+                .orElseThrow(CountryNotFoundException::new))
+            .map(provinceMapper::toProvinceResponse)
+            .orElseThrow(ProvinceNotFoundException::new);
     }
 
     @Override

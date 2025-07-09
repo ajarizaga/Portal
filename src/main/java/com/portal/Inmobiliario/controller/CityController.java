@@ -4,9 +4,9 @@
  */
 package com.portal.Inmobiliario.controller;
 
-import com.portal.Inmobiliario.model.dto.Province.CreateProvinceRequest;
-import com.portal.Inmobiliario.model.dto.Province.ProvinceResponse;
-import com.portal.Inmobiliario.service.IProvinceService;
+import com.portal.Inmobiliario.model.dto.City.CityResponse;
+import com.portal.Inmobiliario.model.dto.City.CreateCityRequest;
+import com.portal.Inmobiliario.service.ICityService;
 import jakarta.validation.Valid;
 import java.net.URI;
 import java.util.List;
@@ -23,49 +23,49 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author Gamer
+ * @author garro
  */
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/provinces")
-public class ProvinceController 
+@RequestMapping("/api/cities")
+public class CityController 
 {
-    private final IProvinceService provinceService;
+    private final ICityService cityService;
     
     @GetMapping
-    public List<ProvinceResponse> findAll()
+    public List<CityResponse> findAlll()
     {
-        return provinceService.findAll();
+        return cityService.findAll();
     }
     
     @GetMapping("/{id}")
-    public ProvinceResponse findById(@PathVariable Long id)
+    public CityResponse findById(@PathVariable Long id)
     {
-        return provinceService.findById(id);
+        return cityService.findById(id);
     }
     
-    @GetMapping("/country/{id}")
-    public List<ProvinceResponse> findAllByCountryId(@PathVariable Long id)
+    @GetMapping("/procince/{id}")
+    public List<CityResponse> findAllByProbinceId(@PathVariable Long id)
     {
-        return provinceService.findAllByCountryId(id);
+        return cityService.findByProvinceId(id);
     }
     
     @PostMapping
-    public ResponseEntity<ProvinceResponse> save(@Valid @RequestBody CreateProvinceRequest request)
-    {      
-        ProvinceResponse response = provinceService.save(request);
-        return ResponseEntity.created(URI.create("/api/provinces/" + response.getId())).body(response);   
+    public ResponseEntity<CityResponse> save(@Valid @RequestBody CreateCityRequest request)
+    {
+        CityResponse response =cityService.save(request);
+        return ResponseEntity.created(URI.create("/api/cities/" + response.getId())).body(response);
     }
     
     @PutMapping("/{id}")
-    public ProvinceResponse update(@PathVariable Long id, @Valid @RequestBody CreateProvinceRequest request)
+    public CityResponse update(@PathVariable Long id, @Valid @RequestBody CreateCityRequest request)
     {
-        return provinceService.update(id, request);
+        return cityService.update(id, request);
     }
     
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Long id)
     {
-        provinceService.deletebyId(id);
+        cityService.deleteById(id);
     }
 }
