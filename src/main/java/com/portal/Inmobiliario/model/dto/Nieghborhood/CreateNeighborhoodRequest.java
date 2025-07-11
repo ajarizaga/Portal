@@ -24,4 +24,6 @@ public class CreateNeighborhoodRequest
     @NotNull(message = "El barrio no puede ser nulo")
     @NotEmpty(message = "El barrio no puede estar vacio")
     private String neighborhood;
+    
+    private Long idCity;
 }

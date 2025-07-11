@@ -4,13 +4,16 @@
  */
 package com.portal.Inmobiliario.repository;
 
+import com.portal.Inmobiliario.model.entity.City;
 import com.portal.Inmobiliario.model.entity.Neighborhood;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author Gamer
  */
-public interface INeighborhoodRepository extends JpaRepository<Neighborhood, Long>{
-    
+public interface INeighborhoodRepository extends JpaRepository<Neighborhood, Long>
+{
+    List <Neighborhood> findAllByCity(City city);
 }

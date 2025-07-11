@@ -8,7 +8,6 @@ import com.portal.Inmobiliario.exceptions.NotFoundException;
 import com.portal.Inmobiliario.mapper.ICityMapper;
 import com.portal.Inmobiliario.model.dto.City.CityResponse;
 import com.portal.Inmobiliario.model.dto.City.CreateCityRequest;
-import com.portal.Inmobiliario.model.dto.Province.CreateProvinceRequest;
 import com.portal.Inmobiliario.model.entity.City;
 import com.portal.Inmobiliario.repository.ICityRepository;
 import com.portal.Inmobiliario.repository.IProvinceRepository;

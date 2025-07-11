@@ -44,8 +44,8 @@ public class CityController
         return cityService.findById(id);
     }
     
-    @GetMapping("/procince/{id}")
-    public List<CityResponse> findAllByProbinceId(@PathVariable Long id)
+    @GetMapping("/province/{id}")
+    public List<CityResponse> findAllByProvinceId(@PathVariable Long id)
     {
         return cityService.findByProvinceId(id);
     }

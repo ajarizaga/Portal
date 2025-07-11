@@ -5,6 +5,7 @@
 package com.portal.Inmobiliario.model.dto.Nieghborhood;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.portal.Inmobiliario.model.entity.City;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -19,4 +20,5 @@ public class NeighborhoodResponse
 {
     private Long id;
     private String neighborhood;
+    private City city;
 }
