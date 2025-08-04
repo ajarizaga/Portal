@@ -26,5 +26,5 @@ public class Operation
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private String operation;
+    private String operation;//deberia venir con un check del front
 }
