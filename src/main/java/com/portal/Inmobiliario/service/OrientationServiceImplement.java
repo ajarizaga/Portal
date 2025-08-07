@@ -49,9 +49,7 @@ public class OrientationServiceImplement implements IOrientationService
         Orientation orientation = new Orientation();
         orientation.setOrientation(request.getOrientation());
         Orientation savedOrientation = orientationRepository.save(orientation);
-        return orientationRepository.findById(savedOrientation.getId())
-            .map(orientationMapper::toOrientationResponse)
-            .orElseThrow(NotFoundException::new);
+        return findbyId(savedOrientation.getId());
         
     }
 

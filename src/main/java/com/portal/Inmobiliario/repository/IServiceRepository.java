@@ -4,13 +4,13 @@
  */
 package com.portal.Inmobiliario.repository;
 
-import com.portal.Inmobiliario.model.entity.Service;
+import com.portal.Inmobiliario.model.entity.Services;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author Gamer
  */
-public interface IServiceRepository extends JpaRepository<Service, Long>{
+public interface IServiceRepository extends JpaRepository<Services, Long>{
     
 }

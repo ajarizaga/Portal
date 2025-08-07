@@ -51,9 +51,7 @@ public class CountryServiceImplement implements ICountryService
             Country country = new Country();
             country.setCountry(request.getCountry());
             Country savedCountry = countryRepository.save(country);
-            return countryRepository.findById(savedCountry.getId())
-                .map(countryMapper::toCountryResponse)
-                .orElseThrow(CountryNotFoundException::new);
+            return findById(savedCountry.getId());
         }
         catch(Exception e)
         {

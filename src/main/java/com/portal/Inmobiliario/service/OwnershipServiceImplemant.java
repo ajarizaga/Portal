@@ -51,9 +51,7 @@ public class OwnershipServiceImplemant implements IOwnershipTypeService
             OwnershipType ownershipType = new OwnershipType();
             ownershipType.setType(request.getType());
             OwnershipType savedOwnershipType = ownershipTypeRepository.save(ownershipType);
-            return ownershipTypeRepository.findById(savedOwnershipType.getId())
-                .map(ownershipTypeMapper::toOwnershipTypeResponse)
-                .orElseThrow(NotFoundException::new);
+            return findById(savedOwnershipType.getId());
         } 
         catch (Exception e) 
         {

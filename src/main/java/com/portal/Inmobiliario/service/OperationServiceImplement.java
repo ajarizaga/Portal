@@ -45,9 +45,7 @@ public class OperationServiceImplement implements IOperationService
         Operation operation = new Operation();
         operation.setOperation(request.getOperation());
         Operation savedOperation = operationRepository.save(operation);
-        return operationRepository.findById(savedOperation.getId())
-            .map(operationMapper::toOperationResponse)
-            .orElseThrow(NotFoundException::new);
+        return findById(savedOperation.getId());
     }
 
     @Override

@@ -50,9 +50,7 @@ public class CurrencyServiceImplement implements ICurrencyService
         currency.setCurrency(request.getCurrency());
         currency.setSymbol(request.getSymbol());
         Currency savedurrency = currencyRepository.save(currency);
-        return currencyRepository.findById(savedurrency.getId())
-            .map(currencyMapper::toCurrencyResponse)
-            .orElseThrow(NotFoundException::new);
+        return findById(savedurrency.getId());
     }
 
     @Override
