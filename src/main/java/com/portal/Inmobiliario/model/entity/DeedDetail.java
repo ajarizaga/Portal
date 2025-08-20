@@ -27,5 +27,4 @@ public class DeedDetail
     private Long id;
     
     private String detail;
-    //agregar el id de la propiedad
 }
