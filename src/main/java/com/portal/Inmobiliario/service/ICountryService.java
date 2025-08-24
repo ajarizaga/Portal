@@ -8,10 +8,7 @@ import com.portal.Inmobiliario.model.dto.Country.CountryResponse;
 import com.portal.Inmobiliario.model.dto.Country.CreateCountryRequest;
 import java.util.List;
 
-/**
- *
- * @author Gamer
- */
+
 public interface ICountryService 
 {
     CountryResponse findById(Long id);

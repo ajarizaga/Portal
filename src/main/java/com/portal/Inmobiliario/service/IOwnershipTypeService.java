@@ -8,10 +8,7 @@ import com.portal.Inmobiliario.model.dto.OwnershipType.CreateOwnershipTypeReques
 import com.portal.Inmobiliario.model.dto.OwnershipType.OwnershipTypeResponse;
 import java.util.List;
 
-/**
- *
- * @author garro
- */
+
 public interface IOwnershipTypeService
 {
     OwnershipTypeResponse findById(Long id);

@@ -8,10 +8,7 @@ import com.portal.Inmobiliario.model.dto.Orientation.CreateOrientationRequest;
 import com.portal.Inmobiliario.model.dto.Orientation.OrientationResponse;
 import java.util.List;
 
-/**
- *
- * @author Gamer
- */
+
 public interface IOrientationService 
 {
     OrientationResponse findbyId(Long id);

@@ -8,10 +8,7 @@ import com.portal.Inmobiliario.model.dto.Currency.CreateCurrencyRequest;
 import com.portal.Inmobiliario.model.dto.Currency.CurrencyResponse;
 import java.util.List;
 
-/**
- *
- * @author garro
- */
+
 public interface ICurrencyService 
 {
     CurrencyResponse findById(Long id);

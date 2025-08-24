@@ -14,5 +14,5 @@ import lombok.Setter;
 public class CharacteristicResponse 
 {
     private Long id;
-    private String chracteristic;
+    private String characteristic;
 }

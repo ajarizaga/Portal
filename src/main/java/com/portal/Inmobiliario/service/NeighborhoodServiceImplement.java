@@ -16,10 +16,7 @@ import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author garro
- */
+
 @Service
 @RequiredArgsConstructor
 public class NeighborhoodServiceImplement implements INeighborhoodService

@@ -4,9 +4,9 @@
  */
 package com.portal.Inmobiliario.controller;
 
-import com.portal.Inmobiliario.model.dto.Currency.CreateCurrencyRequest;
-import com.portal.Inmobiliario.model.dto.Currency.CurrencyResponse;
-import com.portal.Inmobiliario.service.ICurrencyService;
+import com.portal.Inmobiliario.model.dto.Amenity.AmenityResponse;
+import com.portal.Inmobiliario.model.dto.Amenity.CreateAmenityRequest;
+import com.portal.Inmobiliario.service.IAmenityService;
 import jakarta.validation.Valid;
 import java.net.URI;
 import java.util.List;
@@ -21,42 +21,41 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/currencies")
-public class CurrencyController 
+@RequestMapping("api/amenities")
+public class AmenityController 
 {
-    private final ICurrencyService currencyService;
+    private final IAmenityService amenityService;
     
     @GetMapping
-    public List<CurrencyResponse> findAll()
+    public List<AmenityResponse> findAll()
     {
-        return currencyService.findAll();
+        return amenityService.findAll();
     }
     
     @GetMapping("/{id}")
-    public CurrencyResponse findById(@PathVariable Long id)
+    public AmenityResponse findById(@PathVariable Long id)
     {
-        return currencyService.findById(id);
+        return amenityService.findById(id);
     }
     
     @PostMapping
-    public ResponseEntity<CurrencyResponse> save(@Valid @RequestBody CreateCurrencyRequest request)
+    public ResponseEntity<AmenityResponse> save (@Valid @RequestBody CreateAmenityRequest request)
     {
-        CurrencyResponse response = currencyService.save(request);
-        return ResponseEntity.created(URI.create("api/currencies/" + response.getId())).body(response);
+       AmenityResponse response = amenityService.save(request);
+       return ResponseEntity.created(URI.create("api/amenities/" + response.getId())).body(response);
     }
     
     @PutMapping("/{id}")
-    public CurrencyResponse update(@PathVariable Long id, @RequestBody CreateCurrencyRequest request)
+    public AmenityResponse update(@PathVariable Long id, @RequestBody CreateAmenityRequest request)
     {
-        return currencyService.update(id, request);
+        return amenityService.update(id, request);
     }
     
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable Long id)
+    public void delete(@PathVariable Long id)
     {
-        currencyService.deleteById(id);
+        amenityService.deleteById(id);
     }
 }

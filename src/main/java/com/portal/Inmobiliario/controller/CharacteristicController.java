@@ -4,9 +4,9 @@
  */
 package com.portal.Inmobiliario.controller;
 
-import com.portal.Inmobiliario.model.dto.Currency.CreateCurrencyRequest;
-import com.portal.Inmobiliario.model.dto.Currency.CurrencyResponse;
-import com.portal.Inmobiliario.service.ICurrencyService;
+import com.portal.Inmobiliario.model.dto.Characteristic.CharacteristicResponse;
+import com.portal.Inmobiliario.model.dto.Characteristic.CreateCharacteristicRequest;
+import com.portal.Inmobiliario.service.ICharacteristicService;
 import jakarta.validation.Valid;
 import java.net.URI;
 import java.util.List;
@@ -21,42 +21,41 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/currencies")
-public class CurrencyController 
+@RequestMapping("api/characteristics")
+public class CharacteristicController 
 {
-    private final ICurrencyService currencyService;
+    private final ICharacteristicService characteristicService;
     
     @GetMapping
-    public List<CurrencyResponse> findAll()
+    public List<CharacteristicResponse> findAll()
     {
-        return currencyService.findAll();
+        return characteristicService.findAll();
     }
     
     @GetMapping("/{id}")
-    public CurrencyResponse findById(@PathVariable Long id)
+    public CharacteristicResponse findById(@PathVariable Long id)
     {
-        return currencyService.findById(id);
+        return characteristicService.findById(id);
     }
     
     @PostMapping
-    public ResponseEntity<CurrencyResponse> save(@Valid @RequestBody CreateCurrencyRequest request)
+    public ResponseEntity<CharacteristicResponse> save(@Valid @RequestBody CreateCharacteristicRequest request)
     {
-        CurrencyResponse response = currencyService.save(request);
-        return ResponseEntity.created(URI.create("api/currencies/" + response.getId())).body(response);
+        CharacteristicResponse response = characteristicService.save(request);
+        return ResponseEntity.created(URI.create("api/characteristics/" + response.getId())).body(response);
     }
     
     @PutMapping("/{id}")
-    public CurrencyResponse update(@PathVariable Long id, @RequestBody CreateCurrencyRequest request)
+    public CharacteristicResponse update(@PathVariable Long id, @RequestBody CreateCharacteristicRequest request)
     {
-        return currencyService.update(id, request);
+        return characteristicService.update(id, request);
     }
     
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Long id)
     {
-        currencyService.deleteById(id);
+        characteristicService.deleteById(id);
     }
 }

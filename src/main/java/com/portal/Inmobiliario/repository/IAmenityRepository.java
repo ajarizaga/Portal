@@ -7,10 +7,7 @@ package com.portal.Inmobiliario.repository;
 import com.portal.Inmobiliario.model.entity.Amenity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-/**
- *
- * @author garro
- */
+
 public interface IAmenityRepository extends JpaRepository<Amenity, Long>{
     
 }

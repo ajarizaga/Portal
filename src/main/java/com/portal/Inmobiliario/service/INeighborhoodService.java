@@ -8,10 +8,7 @@ import com.portal.Inmobiliario.model.dto.Nieghborhood.CreateNeighborhoodRequest;
 import com.portal.Inmobiliario.model.dto.Nieghborhood.NeighborhoodResponse;
 import java.util.List;
 
-/**
- *
- * @author garro
- */
+
 public interface INeighborhoodService 
 {
     NeighborhoodResponse findById(Long id);

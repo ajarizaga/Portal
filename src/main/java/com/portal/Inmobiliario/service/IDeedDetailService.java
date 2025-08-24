@@ -8,10 +8,7 @@ import com.portal.Inmobiliario.model.dto.DeedDetails.CreateDeedDetailRequest;
 import com.portal.Inmobiliario.model.dto.DeedDetails.DeedDetailResponse;
 import java.util.List;
 
-/**
- *
- * @author garro
- */
+
 public interface IDeedDetailService 
 {
     DeedDetailResponse findById(Long id);

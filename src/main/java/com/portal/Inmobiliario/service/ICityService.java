@@ -8,10 +8,7 @@ import com.portal.Inmobiliario.model.dto.City.CityResponse;
 import com.portal.Inmobiliario.model.dto.City.CreateCityRequest;
 import java.util.List;
 
-/**
- *
- * @author garro
- */
+
 public interface ICityService 
 {
     CityResponse findById(Long id);

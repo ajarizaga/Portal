@@ -8,10 +8,7 @@ import com.portal.Inmobiliario.model.dto.Operation.CreateOperationRequest;
 import com.portal.Inmobiliario.model.dto.Operation.OperationResponse;
 import java.util.List;
 
-/**
- *
- * @author garro
- */
+
 public interface IOperationService 
 {
     OperationResponse findById(Long id);

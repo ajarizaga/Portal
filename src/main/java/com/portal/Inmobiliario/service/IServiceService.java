@@ -8,10 +8,7 @@ import com.portal.Inmobiliario.model.dto.Service.CreateServiceRequest;
 import com.portal.Inmobiliario.model.dto.Service.ServiceResponse;
 import java.util.List;
 
-/**
- *
- * @author garro
- */
+
 public interface IServiceService 
 {
     ServiceResponse findById(Long id);

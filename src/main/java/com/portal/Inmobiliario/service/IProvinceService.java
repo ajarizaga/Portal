@@ -8,10 +8,6 @@ import com.portal.Inmobiliario.model.dto.Province.CreateProvinceRequest;
 import com.portal.Inmobiliario.model.dto.Province.ProvinceResponse;
 import java.util.List;
 
-/**
- *
- * @author Gamer
- */
 
 public interface IProvinceService 
 {
