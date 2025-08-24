@@ -4,10 +4,11 @@
  */
 package com.portal.Inmobiliario.repository;
 
-import com.portal.Inmobiliario.model.entity.OwnershipType;
+import com.portal.Inmobiliario.model.entity.Characteristic;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface IOwnershipTypeRepository extends JpaRepository<OwnershipType, Long>{
+public interface ICharacteristicRepository extends JpaRepository<Characteristic, Long>
+{
     
 }

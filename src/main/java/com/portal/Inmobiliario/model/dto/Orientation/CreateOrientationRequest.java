@@ -11,10 +11,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-/**
- *
- * @author Gamer
- */
+
 @Getter
 @Builder
 @AllArgsConstructor

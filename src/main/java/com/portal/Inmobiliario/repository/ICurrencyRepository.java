@@ -7,10 +7,7 @@ package com.portal.Inmobiliario.repository;
 import com.portal.Inmobiliario.model.entity.Currency;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-/**
- *
- * @author Gamer
- */
+
 public interface ICurrencyRepository extends JpaRepository<Currency, Long>{
     
 }

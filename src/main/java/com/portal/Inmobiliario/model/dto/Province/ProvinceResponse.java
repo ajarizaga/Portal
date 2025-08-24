@@ -9,10 +9,7 @@ import com.portal.Inmobiliario.model.entity.Country;
 import lombok.Builder;
 import lombok.Getter;
 
-/**
- *
- * @author Gamer
- */
+
 @Getter
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)

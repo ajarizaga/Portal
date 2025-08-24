@@ -4,13 +4,12 @@
  */
 package com.portal.Inmobiliario.mapper;
 
-import com.portal.Inmobiliario.model.dto.DeedDetails.DeedDetailResponse;
-import com.portal.Inmobiliario.model.entity.DeedDetail;
+import com.portal.Inmobiliario.model.dto.Amenity.AmenityResponse;
+import com.portal.Inmobiliario.model.entity.Amenity;
 import org.mapstruct.Mapper;
 
-
 @Mapper(componentModel = "spring")
-public interface IDeedDetailMapper 
+public interface IAmenityMapper 
 {
-    DeedDetailResponse toDeedDetailResponse(DeedDetail deedDetail);
+    AmenityResponse toAmenityResponse(Amenity amenity);
 }

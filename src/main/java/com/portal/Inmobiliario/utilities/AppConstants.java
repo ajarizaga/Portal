@@ -4,10 +4,7 @@
  */
 package com.portal.Inmobiliario.utilities;
 
-/**
- *
- * @author Gamer
- */
+
 public class AppConstants 
 {
     public static final String PAGE_NUMBER_DEFAULT = "0";

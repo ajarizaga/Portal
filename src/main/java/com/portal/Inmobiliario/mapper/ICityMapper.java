@@ -8,10 +8,7 @@ import com.portal.Inmobiliario.model.dto.City.CityResponse;
 import com.portal.Inmobiliario.model.entity.City;
 import org.mapstruct.Mapper;
 
-/**
- *
- * @author garro
- */
+
 @Mapper(componentModel = "spring")
 public interface ICityMapper 
 {

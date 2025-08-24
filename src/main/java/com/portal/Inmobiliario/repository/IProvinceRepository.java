@@ -9,10 +9,7 @@ import com.portal.Inmobiliario.model.entity.Province;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-/**
- *
- * @author Gamer
- */
+
 public interface IProvinceRepository extends JpaRepository<Province, Long>
 {
     //lista de provincias

@@ -8,10 +8,7 @@ import com.portal.Inmobiliario.model.dto.Currency.CurrencyResponse;
 import com.portal.Inmobiliario.model.entity.Currency;
 import org.mapstruct.Mapper;
 
-/**
- *
- * @author garro
- */
+
 @Mapper(componentModel = "spring")
 public interface ICurrencyMapper 
 {

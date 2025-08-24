@@ -4,13 +4,12 @@
  */
 package com.portal.Inmobiliario.mapper;
 
-import com.portal.Inmobiliario.model.dto.DeedDetails.DeedDetailResponse;
-import com.portal.Inmobiliario.model.entity.DeedDetail;
+import com.portal.Inmobiliario.model.dto.Characteristic.CharacteristicResponse;
+import com.portal.Inmobiliario.model.entity.Characteristic;
 import org.mapstruct.Mapper;
 
-
 @Mapper(componentModel = "spring")
-public interface IDeedDetailMapper 
+public interface ICharacteristicMapper 
 {
-    DeedDetailResponse toDeedDetailResponse(DeedDetail deedDetail);
+    CharacteristicResponse toCharacteristicResponse(Characteristic characteristic);
 }

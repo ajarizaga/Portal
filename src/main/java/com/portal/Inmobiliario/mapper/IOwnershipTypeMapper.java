@@ -8,10 +8,7 @@ import com.portal.Inmobiliario.model.dto.OwnershipType.OwnershipTypeResponse;
 import com.portal.Inmobiliario.model.entity.OwnershipType;
 import org.mapstruct.Mapper;
 
-/**
- *
- * @author garro
- */
+
 @Mapper(componentModel = "spring")
 public interface IOwnershipTypeMapper 
 {

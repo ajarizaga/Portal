@@ -8,6 +8,7 @@ import org.mapstruct.Mapper;
 
 
 @Mapper(componentModel = "spring", uses = INeighborhoodMapper.class)
+//@Mapper(componentModel = "spring", uses = {INeighborhoodMapper.class, IAddressMapper.class, IUserDetailsMapper.class})
 //incluir todas 
 //LLEVO 1:30 MIN
 public interface IOwnershipMapper {

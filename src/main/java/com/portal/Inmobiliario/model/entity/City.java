@@ -14,10 +14,7 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-/**
- *
- * @author Gamer
- */
+
 @Getter
 @Setter
 @Entity

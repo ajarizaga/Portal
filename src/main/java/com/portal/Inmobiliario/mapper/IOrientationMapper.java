@@ -8,10 +8,7 @@ import com.portal.Inmobiliario.model.dto.Orientation.OrientationResponse;
 import com.portal.Inmobiliario.model.entity.Orientation;
 import org.mapstruct.Mapper;
 
-/**
- *
- * @author Gamer
- */
+
 @Mapper(componentModel = "spring")
 public interface IOrientationMapper 
 {

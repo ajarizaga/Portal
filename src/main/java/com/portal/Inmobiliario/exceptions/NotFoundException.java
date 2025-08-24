@@ -4,10 +4,7 @@
  */
 package com.portal.Inmobiliario.exceptions;
 
-/**
- *
- * @author garro
- */
+
 public class NotFoundException extends RuntimeException{
     
 }

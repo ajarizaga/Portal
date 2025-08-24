@@ -7,10 +7,7 @@ package com.portal.Inmobiliario.repository;
 import com.portal.Inmobiliario.model.entity.Operation;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-/**
- *
- * @author Gamer
- */
+
 public interface IOperationRepository extends JpaRepository<Operation, Long>{
     
 }

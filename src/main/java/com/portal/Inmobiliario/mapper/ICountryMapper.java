@@ -8,10 +8,7 @@ import com.portal.Inmobiliario.model.dto.Country.CountryResponse;
 import com.portal.Inmobiliario.model.entity.Country;
 import org.mapstruct.Mapper;
 
-/**
- *
- * @author Gamer
- */
+
 @Mapper(componentModel = "spring")
 public interface ICountryMapper 
 {

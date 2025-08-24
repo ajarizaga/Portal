@@ -4,10 +4,7 @@
  */
 package com.portal.Inmobiliario.exceptions;
 
-/**
- *
- * @author Gamer
- */
+
 public class ProvinceNotFoundException extends RuntimeException{
     
 }

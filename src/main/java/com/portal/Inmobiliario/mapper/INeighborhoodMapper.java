@@ -8,10 +8,7 @@ import com.portal.Inmobiliario.model.dto.Nieghborhood.NeighborhoodResponse;
 import com.portal.Inmobiliario.model.entity.Neighborhood;
 import org.mapstruct.Mapper;
 
-/**
- *
- * @author garro
- */
+
 @Mapper(componentModel = "spring")
 public interface INeighborhoodMapper 
 {
