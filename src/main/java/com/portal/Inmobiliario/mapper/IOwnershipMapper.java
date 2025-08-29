@@ -4,13 +4,14 @@
  */
 package com.portal.Inmobiliario.mapper;
 
+import com.portal.Inmobiliario.model.dto.Ownership.OwnershipResponse;
+import com.portal.Inmobiliario.model.entity.Ownership;
 import org.mapstruct.Mapper;
 
 
-@Mapper(componentModel = "spring", uses = INeighborhoodMapper.class)
-//@Mapper(componentModel = "spring", uses = {INeighborhoodMapper.class, IAddressMapper.class, IUserDetailsMapper.class})
-//incluir todas 
-//LLEVO 1:30 MIN
-public interface IOwnershipMapper {
-    
+@Mapper(componentModel = "spring", uses = {INeighborhoodMapper.class, ICurrencyMapper.class, IOrientationMapper.class, IOwnershipTypeMapper.class, IServiceMapper.class, IAmenityMapper.class, ICharacteristicMapper.class})
+ 
+public interface IOwnershipMapper 
+{
+    OwnershipResponse toOwnershipResponse(Ownership ownership);
 }

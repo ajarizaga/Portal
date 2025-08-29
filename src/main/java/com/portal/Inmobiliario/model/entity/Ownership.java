@@ -39,7 +39,7 @@ public class Ownership
     private BigInteger price;
     private Integer expenses;
     private Date publicateionDate;
-    private Boolean deed;//se va a caracteristicas
+    //private Boolean deed;//se va a caracteristicas
     //private String deedDetails; 
     private String writingDesk;
     private Boolean gasWorkADay;
@@ -72,4 +72,21 @@ public class Ownership
     )
     private Set<Services> services;
     
+    @ManyToMany
+    @JoinTable(
+        name ="amenities_ownerships",
+        joinColumns = @JoinColumn(name = "ownership_id"),
+        inverseJoinColumns = @JoinColumn(name = "amenities_id")
+    )
+    private Set<Amenity> amenities;
+    
+    @ManyToMany
+    @JoinTable(
+        name = "characteristic_ownerships",
+        joinColumns = @JoinColumn(name = "ownership_id"),
+        inverseJoinColumns = @JoinColumn(name = "characrteristic_id")
+    )
+    private Set<Characteristic> characteristic;
+    
+        
 }
